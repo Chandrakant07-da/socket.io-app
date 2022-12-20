@@ -22,14 +22,9 @@ socket.on('user-disconnected', name => {
 messageForm.addEventListener('submit', e => {
   e.preventDefault()
   const message = messageInput.value
-  if(message=null){
-    alert('What is your name?');
-  }else{
-      appendMessage(`You: ${message}`)
+  appendMessage(`You: ${message}`)
   socket.emit('send-chat-message', message)
   messageInput.value = ''
-  }
-
 })
 
 function appendMessage(message) {
